@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email System — Adviser Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/email-system.css">
+</head>
+<body data-page-title="Email System" data-page-subtitle="Send announcements & individual emails">
+<script>if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")</script>
+    <div id="sidebar-container"></div>
+    <div class="main-content" id="mainContent">
+        <div id="topbar-container"></div>
+        <div class="page-body">
+            <h2 class="page-title"><i class="bi bi-envelope-fill"></i> Email System</h2>
+            <p class="page-subtitle">Send bulk announcements to all advisees or individual emails to specific students.</p>
+            <div class="mode-toggle">
+                <button class="mode-btn active" onclick="switchMode('bulk')"><i class="bi bi-megaphone"></i> Bulk Announcement</button>
+                <button class="mode-btn" onclick="switchMode('individual')"><i class="bi bi-person"></i> Individual Email</button>
+            </div>
+            <div class="tab-content active" id="mode-bulk">
+                <div class="section-card">
+                    <div class="section-title"><i class="bi bi-megaphone"></i> Send Announcement</div>
+                    <div class="section-desc">Loading advisees...</div>
+                    <div class="form-group">
+                        <label class="form-label-custom">Recipients</label>
+                        <input type="text" class="form-control-custom" value="Loading..." disabled style="background:var(--dlsu-gray-50);">
+                        <div class="recipient-info"><i class="bi bi-info-circle"></i> Loading...</div>
+                    </div>
+                    <div class="form-group"><label class="form-label-custom">Subject <span class="required">*</span></label><input type="text" class="form-control-custom" id="bulkSubject" placeholder="e.g. Advising Period Now Open — Submit Your Study Plans"></div>
+                    <div class="form-group"><label class="form-label-custom">Message <span class="required">*</span></label><textarea class="form-control-custom" id="bulkMessage" placeholder="Dear students,&#10;&#10;The academic advising period for Term 2, AY 2025–2026 is now open..."></textarea></div>
+                    <button class="btn-send" onclick="sendBulkEmail()"><i class="bi bi-send-fill"></i> Send to All Advisees</button>
+                </div>
+            </div>
+            <div class="tab-content" id="mode-individual">
+                <div class="section-card">
+                    <div class="section-title"><i class="bi bi-person"></i> Send Individual Email</div>
+                    <div class="section-desc">Send a direct email to a specific student.</div>
+                    <div class="form-group">
+                        <label class="form-label-custom">Recipient <span class="required">*</span></label>
+                        <select class="form-control-custom" id="individualRecipient">
+                            <option value="">Select a student...</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label class="form-label-custom">Subject <span class="required">*</span></label><input type="text" class="form-control-custom" id="individualSubject" placeholder="e.g. Follow-up on your study plan submission"></div>
+                    <div class="form-group"><label class="form-label-custom">Message <span class="required">*</span></label><textarea class="form-control-custom" id="individualMessage" placeholder="Write your message here..."></textarea></div>
+                    <button class="btn-send" onclick="sendIndividualEmail()"><i class="bi bi-send-fill"></i> Send Email</button>
+                </div>
+            </div>
+            <div class="section-card">
+                <div class="section-title"><i class="bi bi-clock-history"></i> Recently Sent</div>
+                <div class="section-desc">Your last sent emails and announcements.</div>
+                <div id="recentlySentContainer">
+                    <div class="empty-state">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/load-components.js"></script>
+    <script src="js/email-system.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>

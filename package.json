@@ -1,0 +1,36 @@
+{
+  "name": "student-portal",
+  "version": "1.0.0",
+  "description": "Standalone student portal for academic advising, appointments, and progress tracking",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "open index.html",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "student",
+    "advising",
+    "academic",
+    "dashboard",
+    "appointments",
+    "concerns"
+  ],
+  "author": "DECEE-AdviSync",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/student-portal.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "notes": {
+    "backend": "None - All data is hardcoded in js/mock-data.js",
+    "authentication": "Session-based with localStorage (demo credentials in README.md)",
+    "browser_support": "Chrome 90+, Firefox 88+, Safari 14+, Edge 90+",
+    "sample_student": "Juan Dela Cruz (221234567) - 4th Year BSCpE"
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<header class="topbar">
+    <div class="d-flex align-items-center">
+        <button class="hamburger-btn" id="hamburgerBtn"><i class="bi bi-list"></i></button>
+        <div class="topbar-left"><h1 id="pageTitle">Dashboard</h1><p id="topbarClock"></p></div>
+    </div>
+    <div class="topbar-right">
+        <button class="topbar-circle-btn" title="Toggle Dark Mode" id="darkModeBtn"><i class="bi bi-moon-fill"></i></button>
+        <button class="topbar-circle-btn" title="Notifications" id="notifBtn"><i class="bi bi-bell-fill"></i><span class="notif-badge" style="display:none">0</span></button>
+        <div class="profile-wrapper" id="profileWrapper">
+            <div class="d-flex align-items-center gap-1" style="cursor:pointer;" id="profileToggle">
+                <div class="profile-btn dropdown-avatar">--</div>
+                <i class="bi bi-chevron-down profile-chevron"></i>
+            </div>
+            <div class="profile-dropdown">
+                <div class="dropdown-header"><div class="dropdown-avatar">--</div><div><div class="dropdown-name">Loading...</div><div class="dropdown-role">Adviser</div></div></div>
+                <div class="dropdown-info">
+                    <div class="dropdown-info-row"><span class="dropdown-info-label">Department</span><span class="dropdown-info-value">—</span></div>
+                    <div class="dropdown-info-row"><span class="dropdown-info-label">Program</span><span class="dropdown-info-value">—</span></div>
+                    <div class="dropdown-info-row"><span class="dropdown-info-label">Advisees</span><span class="dropdown-info-value">—</span></div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a href="adviser-profile.html" class="dropdown-action"><i class="bi bi-person"></i> View Profile</a>
+                <a href="adviser-settings.html" class="dropdown-action"><i class="bi bi-gear"></i> Settings</a>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-action logout" onclick="signOut()"><i class="bi bi-box-arrow-left"></i> Log Out</button>
+            </div>
+        </div>
+    </div>
+</header>
+</html>     

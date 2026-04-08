@@ -1,0 +1,395 @@
+.page-body {
+    padding: 1.75rem 2rem;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dlsu-green, #00703c);
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.page-title i {
+    font-size: 1.2rem;
+}
+.page-subtitle {
+    font-size: 0.82rem;
+    color: var(--dlsu-gray-400, #94a89c);
+    margin-bottom: 1.75rem;
+}
+
+/* ── Summary Cards ── */
+.checklist-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.summary-card {
+    background: white;
+    border: 1px solid var(--dlsu-gray-200, #e8ede9);
+    border-radius: 12px;
+    padding: 1.15rem;
+    text-align: center;
+}
+.summary-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--dlsu-gray-800, #1a2e22);
+}
+.summary-value.completed {
+    color: var(--dlsu-green, #00703c);
+}
+.summary-value.remaining {
+    color: #e6a817;
+}
+.summary-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--dlsu-gray-400, #94a89c);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 0.25rem;
+}
+.progress-bar-wrapper {
+    margin-top: 0.6rem;
+    height: 6px;
+    background: var(--dlsu-gray-100, #f0f4f1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background: var(--dlsu-green, #00703c);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+/* ── Filter Tabs ── */
+.checklist-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--dlsu-gray-200, #e8ede9);
+    border-radius: 8px;
+    background: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--dlsu-gray-600, #5a6b60);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.filter-btn:hover {
+    border-color: var(--dlsu-green, #00703c);
+    color: var(--dlsu-green, #00703c);
+}
+.filter-btn.active {
+    background: var(--dlsu-green, #00703c);
+    color: white;
+    border-color: var(--dlsu-green, #00703c);
+}
+
+/* ── Year Groups ── */
+.year-group {
+    margin-bottom: 2rem;
+}
+.year-group.current {
+    border: 2px solid var(--dlsu-green, #00703c);
+    border-radius: 14px;
+    padding: 1.25rem;
+}
+.year-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.year-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dlsu-gray-800, #1a2e22);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+.year-header h3 i {
+    color: var(--dlsu-green, #00703c);
+}
+.year-progress {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dlsu-gray-400, #94a89c);
+}
+.current-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: var(--dlsu-green, #00703c);
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    margin-left: 0.35rem;
+}
+
+/* ── Term Groups ── */
+.term-group {
+    margin-bottom: 1.25rem;
+}
+.term-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--dlsu-gray-600, #5a6b60);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.term-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+}
+.term-status.in-progress {
+    background: rgba(0, 112, 60, 0.1);
+    color: var(--dlsu-green, #00703c);
+}
+.term-status.not-taken {
+    background: var(--dlsu-gray-100, #f0f4f1);
+    color: var(--dlsu-gray-400, #94a89c);
+}
+
+/* ── Checklist Table ── */
+.checklist-table {
+    background: white;
+    border: 1px solid var(--dlsu-gray-200, #e8ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+.checklist-row {
+    display: grid;
+    grid-template-columns: 36px 90px 1fr 60px minmax(100px, 150px) 60px;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--dlsu-gray-100, #f0f4f1);
+    transition: background 0.15s;
+}
+.checklist-row:last-child {
+    border-bottom: none;
+}
+.checklist-row.header {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--dlsu-gray-400, #94a89c);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: var(--dlsu-gray-50, #f7faf8);
+}
+
+/* Status icons */
+.checklist-row.completed .col-status i {
+    color: var(--dlsu-green, #00703c);
+    font-size: 1rem;
+}
+.checklist-row.in-progress .col-status i {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    animation: spin 1.5s linear infinite;
+}
+.checklist-row.not-taken .col-status i {
+    color: var(--dlsu-gray-200, #e8ede9);
+    font-size: 0.9rem;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.col-code {
+    font-weight: 700;
+    color: var(--dlsu-gray-800, #1a2e22);
+}
+.col-name {
+    color: var(--dlsu-gray-600, #5a6b60);
+}
+.col-units {
+    text-align: center;
+    font-weight: 600;
+}
+.col-prereq {
+    font-size: 0.75rem;
+    color: var(--dlsu-gray-400, #94a89c);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 0.5rem;
+}
+.col-grade {
+    text-align: center;
+    font-weight: 700;
+    color: var(--dlsu-gray-800, #1a2e22);
+}
+
+.checklist-row.completed {
+    background: rgba(0, 112, 60, 0.02);
+}
+.checklist-row.in-progress {
+    background: rgba(59, 130, 246, 0.03);
+}
+.checklist-row.not-taken .col-code,
+.checklist-row.not-taken .col-name {
+    color: var(--dlsu-gray-400, #94a89c);
+}
+
+/* ── Total Row ── */
+.checklist-row.total-row {
+    background: var(--dlsu-gray-50, #f7faf8);
+    border-top: 2px solid var(--dlsu-gray-200, #e8ede9);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--dlsu-gray-800, #1a2e22);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .checklist-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .checklist-row {
+        grid-template-columns: 30px 70px 1fr 45px minmax(70px, 100px) 45px;
+        padding: 0.5rem 0.65rem;
+        font-size: 0.72rem;
+    }
+    .checklist-row.header {
+        font-size: 0.65rem;
+    }
+}
+
+body.dark-mode .page-title {
+    color: #4ade80;
+}
+body.dark-mode .page-subtitle {
+    color: #6b7e70;
+}
+
+body.dark-mode .summary-card {
+    background: #232a25;
+    border-color: #2f3832;
+}
+body.dark-mode .summary-value {
+    color: #d4ddd7;
+}
+body.dark-mode .summary-value.completed {
+    color: #4ade80;
+}
+body.dark-mode .summary-value.remaining {
+    color: #fbbf24;
+}
+body.dark-mode .summary-label {
+    color: #6b7e70;
+}
+body.dark-mode .progress-bar-wrapper {
+    background: #2f3832;
+}
+
+body.dark-mode .filter-btn {
+    background: #232a25;
+    border-color: #2f3832;
+    color: #94a89c;
+}
+body.dark-mode .filter-btn:hover {
+    border-color: #4ade80;
+    color: #4ade80;
+}
+body.dark-mode .filter-btn.active {
+    background: var(--dlsu-green, #00703c);
+    color: white;
+    border-color: var(--dlsu-green, #00703c);
+}
+
+body.dark-mode .year-header h3 {
+    color: #d4ddd7;
+}
+body.dark-mode .year-header h3 i {
+    color: #4ade80;
+}
+body.dark-mode .year-progress {
+    color: #6b7e70;
+}
+body.dark-mode .year-group.current {
+    border-color: #2f6b3f;
+}
+
+body.dark-mode .term-label {
+    color: #94a89c;
+}
+body.dark-mode .term-status.in-progress {
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+}
+body.dark-mode .term-status.not-taken {
+    background: #2f3832;
+    color: #6b7e70;
+}
+
+body.dark-mode .checklist-table {
+    background: #1a1f1c;
+    border-color: #2f3832;
+}
+body.dark-mode .checklist-row {
+    border-color: #2f3832;
+}
+body.dark-mode .checklist-row.header {
+    background: #141a16;
+    color: #6b7e70;
+}
+body.dark-mode .checklist-row.completed {
+    background: rgba(74, 222, 128, 0.03);
+}
+body.dark-mode .checklist-row.in-progress {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+body.dark-mode .col-code {
+    color: #d4ddd7;
+}
+body.dark-mode .col-name {
+    color: #94a89c;
+}
+body.dark-mode .col-grade {
+    color: #d4ddd7;
+}
+body.dark-mode .col-prereq {
+    color: #6b7e70;
+}
+body.dark-mode .checklist-row.completed .col-status i {
+    color: #4ade80;
+}
+body.dark-mode .checklist-row.in-progress .col-status i {
+    color: #60a5fa;
+}
+body.dark-mode .checklist-row.not-taken .col-status i {
+    color: #3a4a3e;
+}
+body.dark-mode .checklist-row.not-taken .col-code,
+body.dark-mode .checklist-row.not-taken .col-name {
+    color: #6b7e70;
+}
+body.dark-mode .checklist-row.total-row {
+    background: #1a1f1c;
+    border-top-color: #2f3832;
+    color: #d4ddd7;
+}
